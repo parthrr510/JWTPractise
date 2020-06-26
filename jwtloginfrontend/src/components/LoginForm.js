@@ -15,6 +15,11 @@ export default class LoginForm extends Component {
       [name]: value
     });
   }
+
+  componentDidMount() {
+    this.primaryInput.focus();
+  }
+  
   onSubmit = (event) => {
     event.preventDefault()
     this.props.onSubmit(this.state.username, this.state.password)

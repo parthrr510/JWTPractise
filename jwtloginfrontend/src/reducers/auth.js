@@ -37,10 +37,10 @@ export default (state=initialState, action) => {
          refresh: undefined,
          errors: action.payload.response || {'non_field_errors': action.payload.statusText},
       }
-    default:
-      return state
+      default:
+        return state;
     }
-}
+  }
 
 export function accessToken(state) {
   if (state.access) {
@@ -70,7 +70,7 @@ export function isRefreshTokenExpired(state) {
 
 export function isAuthenticated(state) {
   return !isRefreshTokenExpired(state)
-}
+} 
 
 export function errors(state) {
   return  state.errors
